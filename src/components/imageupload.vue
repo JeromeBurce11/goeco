@@ -58,20 +58,7 @@
   </div>
 </v-flex>
 </template>
-<style>
-h1, h2 {
-    font-weight: normal;
-    color: teal;
-}
-.v-content__wrap {
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    max-width: 100%;
-    position: relative;
-    /* background-color: teal; */
-}
-</style>
+
 
 <script>
 export default {

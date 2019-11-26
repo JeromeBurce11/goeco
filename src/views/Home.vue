@@ -1,26 +1,26 @@
 <template>
+<div>
   <Sidebar />
+  <EventCard  />
+</div>
 </template>
 <script>
 import Sidebar from '../components/Sidebar.vue'
 import VImageInput from 'vuetify-image-input/a-la-carte';
+import EventCard from '../components/EventCard.vue';
 // import InputEvent from '../components/InputEvent.vue'
 export default {
   
   data: () => ({
-    drawer: true,
+ 
+    posts:[{},{}]
   }),
   components: {
-    Sidebar
+    Sidebar,
+    EventCard 
     // InputEvent
   },
   methods: {
-    dashboard() {
-      this.$router.push("/sidebar");
-    },
-    addevent() {
-      this.$router.push("/addevent");
-    }
   }
 };
 </script>

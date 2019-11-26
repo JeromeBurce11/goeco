@@ -67,8 +67,10 @@
         </v-card>
         <!-- </v-col> -->
       </v-row>
+       <!-- <CardOfEvents /> -->
     </v-container>
   </div>
+ 
 </template>
 <style scoped>
 .theme--light.v-data-table.v-data-table--fixed-header thead th {
@@ -115,12 +117,13 @@
 <script>
 export default {
   name: "sidebar",
+ 
   data: () => ({
     drawer: true
   }),
   methods: {
     dashboard() {
-      this.$router.push("/sidebar");
+      this.$router.push("/dashboard");
     },
     addevent() {
       this.$router.push("/addevent");

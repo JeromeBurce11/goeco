@@ -2,7 +2,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue"
-import Sidebar from "../components/Sidebar.vue";
+// import Sidebar from "../components/Sidebar.vue";
+import Dashboard from "../views/Dashboard.vue";
 import AddEvent from "../components/AddEvent.vue";
 Vue.use(VueRouter);
 
@@ -17,10 +18,18 @@ const routes = [
     name: "home",
     component: Home
   },
+  // {
+  //   path:"/sidebar",
+  //   name:"sidebar",
+  //   component:Sidebar,
+  //   meta: {
+  //       tokenRequired: false
+  //   }
+  // },
   {
-    path:"/sidebar",
-    name:"sidebar",
-    component:Sidebar,
+    path:"/dashboard",
+    name:"dashboard",
+    component:Dashboard ,
     meta: {
         tokenRequired: false
     }

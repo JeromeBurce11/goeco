@@ -1,4 +1,5 @@
 <template>
+<div  id="background">
   <v-card class="mx-auto card" max-width="400">
     <v-container>
       <center>
@@ -28,8 +29,30 @@
       <br />
     </v-container>
   </v-card>
+  </div>
 </template>
-
+<style>
+h1, h2 {
+    font-weight: normal;
+    color: teal;
+}
+.v-content__wrap {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    max-width: 100%;
+    position: relative;
+    background-image: url('../assets/greengrass.jpeg');
+    background-size:cover
+}
+.card {
+  margin-top: 13%;
+}
+#image {
+  width: 40%;
+  height: 40%;
+}
+</style>
 <script>
 export default {
   data() {
@@ -80,13 +103,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.card {
-  margin-top: 5%;
-}
-#image {
-  width: 40%;
-  height: 40%;
-}
-</style>
