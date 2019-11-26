@@ -58,7 +58,7 @@
             <v-list-item-title>Add Event</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item>
+        <v-list-item link @click="aboutus()">
           <v-list-item-action>
             <v-icon>fas fa-building</v-icon>
           </v-list-item-action>
@@ -150,6 +150,9 @@ export default {
     },
     logout(){
       this.$router.push("/");
+    },
+    aboutus(){
+      this.$router.push("/aboutus");
     }
   }
 };
