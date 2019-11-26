@@ -1,34 +1,40 @@
 <template>
 <div  id="background">
-  <v-card class="mx-auto card" max-width="400">
-    <v-container>
-      <center>
-        <v-img src="@/assets/accountIcon.jpeg" id="image"></v-img>
-        <h1>Admin</h1>
-      </center>
-      <form id="form">
-        <v-container>
-          <v-text-field v-model="user.username" :rules="[rules.required]" label="Username"></v-text-field>
-          <v-text-field
-            v-model="user.password"
-            :append-icon="show1 ? 'fas fa-eye' : 'fas fa-eye-slash'"
-            :rules="[rules.required, rules.password]"
-            :type="show1 ? 'text' : 'password'"
-            name="input-10-1"
-           
-            label="Password"
-             
-            hint="At least 8 characters"
-            counter
-            @click:append="show1 = !show1"
-          ></v-text-field>
-          <v-btn class="mr-4" @click="checkform" :disabled="!validinput"  color="green">submit</v-btn>
-          <v-btn @click="clear">clear</v-btn>
-        </v-container>
-      </form>
-      <br />
-    </v-container>
-  </v-card>
+  <v-flex justify-center>
+   <h1 class="subtitle-110 text-center">GoEco</h1> 
+    
+    <v-card class="mx-auto card" max-width="400">
+
+      
+      <v-container>
+        <center>
+          <v-img src="@/assets/accountIcon.jpeg" id="image"></v-img>
+          <h1>Admin</h1>
+        </center>
+        <form id="form">
+          <v-container>
+            <v-text-field v-model="user.username" :rules="[rules.required]" label="Username"></v-text-field>
+            <v-text-field
+              v-model="user.password"
+              :append-icon="show1 ? 'fas fa-eye' : 'fas fa-eye-slash'"
+              :rules="[rules.required, rules.password]"
+              :type="show1 ? 'text' : 'password'"
+              name="input-10-1"
+            
+              label="Password"
+              
+              hint="At least 8 characters"
+              counter
+              @click:append="show1 = !show1"
+            ></v-text-field>
+            <v-btn class="mr-4" @click="checkform" :disabled="!validinput"  color="green">submit</v-btn>
+            <v-btn @click="clear">clear</v-btn>
+          </v-container>
+        </form>
+        <br />
+      </v-container>
+    </v-card>
+  </v-flex>
   </div>
 </template>
 <style>
@@ -36,6 +42,7 @@ h1, h2 {
     font-weight: normal;
     color: teal;
 }
+
 .v-content__wrap {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
@@ -45,8 +52,13 @@ h1, h2 {
     background-image: url('../assets/greengrass.jpeg');
     background-size:cover
 }
+.v-application .text-center {
+    text-align: center !important;
+    font-size: 80px;
+    color: white;
+}
 .card {
-  margin-top: 13%;
+  margin-top: 1%;
 }
 #image {
   width: 40%;
@@ -54,6 +66,7 @@ h1, h2 {
 }
 </style>
 <script>
+import {login} from '../store/axios.js'
 export default {
   data() {
     return {
@@ -78,8 +91,12 @@ export default {
     };
   },
   methods: {
-    checkform: function(e) {
-      if (this.user.username !== null && this.user.password !== null) {
+    checkform: function() {
+      let data={
+       username: this.user.username,
+       password:this.user.password
+      }
+      if (data.username !== null && data.password !== null) {
         // sessionStorage.setItem("authenticated", true);
         // sessionStorage.setItem("username", this.username);
         // this.$store.commit("setAuthentication", true);

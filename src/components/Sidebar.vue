@@ -4,10 +4,16 @@
       <thead class="back">
         <tr>
           <th class="text-left">
-            <v-icon @click.stop="drawer = !drawer">fas fa-bars</v-icon>&nbsp;&nbsp;&nbsp;&nbsp;GoEco
+            <v-btn x-large color="teal"><v-icon @click.stop="drawer = !drawer">fas fa-bars</v-icon> </v-btn> &nbsp;&nbsp;&nbsp;&nbsp;GoEco
           </th>
           <th class="text-right">
-            <v-icon link @click="logout()">fas fa-sign-out-alt</v-icon>
+           
+              <v-btn  link @click="logout()"  class="mx-2" fab dark color="teal">
+              <v-icon dark>fas fa-sign-out-alt</v-icon>
+            </v-btn>
+            <!-- <v-btn >
+            <v-icon>fas fa-sign-out-alt</v-icon>
+            </v-btn> -->
           </th>
         </tr>
       </thead>
@@ -34,9 +40,19 @@
             <v-list-item-title>Dashboard</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>fad fa-clipboard-list</v-icon>
+            <!-- <i class="fad fa-clipboard-list"></i> -->
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Subscriber List</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
         <v-list-item link @click="addevent()">
           <v-list-item-action>
             <v-icon>fas fa-calendar-plus</v-icon>
+           
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Add Event</v-list-item-title>
@@ -56,7 +72,7 @@
     <v-container fluid>
       <v-row dense>
         <!-- <v-col v-for="card in cards" :key="card.title" :cols="card.flex"> -->
-        <v-card>
+        <!-- <v-card>
           <v-card-actions>
             <v-spacer></v-spacer>
 
@@ -64,7 +80,7 @@
               <v-icon color="blue">fab fa-facebook</v-icon>
             </v-btn>
           </v-card-actions>
-        </v-card>
+        </v-card> -->
         <!-- </v-col> -->
       </v-row>
        <!-- <CardOfEvents /> -->
@@ -90,6 +106,10 @@
 .fa-home:before {
   content: "\f015";
   color: green;
+}
+.fa-clipboard-list:before {
+    content: "\f46d";
+    color: green;
 }
 .fa-building:before {
   content: "\f1ad";

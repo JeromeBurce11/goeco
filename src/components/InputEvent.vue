@@ -55,6 +55,16 @@
               <v-btn text color="primary" @click="$refs.menu.save(date)">OK</v-btn>
             </v-date-picker>
           </v-menu>
+          <v-text-field
+              ref="name"
+              v-model="name"
+              prepend-icon="fas fa-clock"
+              :rules="[() => !!name || 'This field is required']"
+          
+              label="Time to start and end"
+              placeholder="Time for the event"
+              required
+            ></v-text-field>
            <v-textarea
           name="input-7-1"
           filled
