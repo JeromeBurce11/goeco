@@ -66,7 +66,7 @@ h1, h2 {
 }
 </style>
 <script>
-import {login} from '../store/axios.js'
+import {Login} from '../store/axios.js'
 export default {
   data() {
     return {
@@ -96,13 +96,21 @@ export default {
        username: this.user.username,
        password:this.user.password
       }
+      Login(data)
+      .then(data =>{
+        alert(data)
+        this.$emit('Login',data.data);
+
+      })
+      .catch(err=> alert(err));
+
       if (data.username !== null && data.password !== null) {
         // sessionStorage.setItem("authenticated", true);
         // sessionStorage.setItem("username", this.username);
         // this.$store.commit("setAuthentication", true);
-        this.$router.push("/home");
+        // this.$router.push("/home");
       }
-      e.preventDefault();
+      // e.preventDefault();
     },
     clear() {
       this.$v.$reset();
